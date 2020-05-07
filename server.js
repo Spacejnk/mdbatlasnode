@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const connectDB = require('./DB/Connection');
 require('dotenv/config');
-//require('dotenv').config();
+
 
 connectDB();
 app.use(express.json({ extended: false }));
