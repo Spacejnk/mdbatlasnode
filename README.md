@@ -1,8 +1,8 @@
 ### mdbatlasnode
 
 > Technologies used
-*  nodejs
-*  express
+* body-parser
 *  dotenv
 *  express
 *  mongoose
+*  nodejs
