@@ -26,6 +26,18 @@ router.get('/', async (req, res) => {
     }
 });
 
+// specific post 
+router.get('/:postId', async(req, res) => {
+    //console.log(req.params.postId);
+    try {
+    const userModel = await User.findById(req.params.postId);
+         res.json(userModel);
+    } catch (err) {
+         res.json({ message: err });
+    }
+ 
+ });
+
 // delete by id
 router.delete("/:id", function(req, res, next) {
     User.findByIdAndRemove(req.params.id, req.body, function(err, user) {
