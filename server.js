@@ -3,7 +3,9 @@ const app = express();
 const connectDB = require('./DB/Connection');
 require('dotenv/config');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
+app.use(cors());
 connectDB();
 app.use(express.json({ extended: false }));
 app.use('/api/userModel', require('./API/User'), bodyParser.json());

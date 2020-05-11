@@ -46,6 +46,18 @@ router.delete("/:id", function(req, res, next) {
     });
    });
 
+// update a post
+router.patch('/:postId', async (req, res) => {
+    try {
+    const updatedPost = await User.updateOne({ _id: req.params.postId }, {$set: { firstName: req.body.firstName,  lastName: req.body.lastName  }}
+        );
+        res.json(updatedPost);
+    } catch (err) {
+        res.json({ message: err });
+    }
+
+});
+
 
 
 
